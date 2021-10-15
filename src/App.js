@@ -1,19 +1,19 @@
 import React from 'react'
-import CounterIndicator from './components/CounterIndicator'
-import CounterButtons from './components/CounterButtons'
+import GlobalStyle from './globalStyles'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Detail, GiphyPage } from './pages'
 
 const App = () => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <div className="lin-card has-space-top text-center">
-            <CounterIndicator />
-            <CounterButtons />
-          </div>
-        </div>
-      </div>
-    </div>
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={GiphyPage} />
+          <Route exact path="/details/:id" component={Detail} />
+        </Switch>
+      </BrowserRouter>
+    </>
   )
 }
 

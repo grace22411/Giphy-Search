@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 
-import { counterSlice } from './slices/counter'
+import { giphySlice } from './slices/giphy'
 
 const preloadedState = localStorage.getItem('preloadedState')
   ? JSON.parse(localStorage.getItem('preloadedState'))
@@ -8,7 +8,7 @@ const preloadedState = localStorage.getItem('preloadedState')
 
 const store = configureStore({
   reducer: {
-    counter: counterSlice.reducer
+    giphy: giphySlice.reducer
   },
   middleware: [...getDefaultMiddleware()],
   preloadedState
