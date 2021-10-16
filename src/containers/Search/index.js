@@ -5,7 +5,8 @@ import { clearSearch, searchGiphyByKeyword } from '../../store/slices/giphy'
 import { SearchContainer, ImageContain, Container } from './search-style'
 
 const Search = () => {
-  const dispatch = useDispatch()
+
+  const dispatch = useDispatch();
   const [keyword, setKeyword] = useState('')
   const { searchResults, isLoadingSearchResults } = useSelector(
     state => state.giphy
@@ -33,7 +34,7 @@ const Search = () => {
           onChange={handleChange}
           placeholder="Search for GIFs"
         />
-        <button onClick={handleSearch} disabled={isLoadingSearchResults}>
+        <button onClick={handleSearch} disabled={isLoadingSearchResults} data-testid="search-button">
           {isLoadingSearchResults ? 'Searching...' : 'Search'}
         </button>
       </SearchContainer>
